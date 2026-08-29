@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.gamerschat.twaminimal'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.gamerschat.twaminimal"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Matching Google's own official twa-basic demo exactly: version
+    // 2.2.0, no forced dependency overrides. This is a deliberately
+    // OLD, stable version chosen specifically because it predates the
+    // alpha androidx.browser dependency problem entirely.
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.2.0'
+}
